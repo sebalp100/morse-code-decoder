@@ -69,6 +69,17 @@ def decode_word(word)
   result
 end
 
-decoded = decode_word(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+def decode(message)
+  result = ""
+  
+  words = message.split("   ")
+  words.each do |word|
+    result += decode_word(word) + " "
+  end
+  
+  result.strip
+end
+
+decoded = decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
 
 puts decoded
